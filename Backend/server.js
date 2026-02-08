@@ -6,9 +6,13 @@ require("dotenv").config();
 const app = express();
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: [
+    "http://localhost:5173",
+    "https://vishuportfolio-backend.onrender.com" // frontend ka URL
+  ],
   methods: ["POST"]
 }));
+
 app.use(express.json());
 
 /* ✅ GMAIL SMTP CONFIG */
